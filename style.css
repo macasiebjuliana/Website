@@ -563,22 +563,13 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
     .projects-box {
         gap: 3rem;
     }
-    #menu-icon {
-        display: block; /* Show icon on mobile */
 }
 
 /* For Mobile Phones */
 @media (max-width: 768px) {
     /* Navbar Adjustment - Simplified for CSS-only (consider a JS hamburger menu later) */
-    .navbar {position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 4%;
-        background: rgba(0, 0, 0, 0.9);
-        backdrop-filter: blur(15px);
-        border-top: .1rem solid rgba(255, 255, 255, 0.1);
-        display: none;
+    .navbar {
+        display: none; /* Usually hidden on mobile until clicked */
     }
 
     /* Stack Home Section */
