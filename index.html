@@ -10,6 +10,7 @@
 <body>
     <header>
         <a href="#home" class="logo">Juliana <span>Macasieb</span></a>
+        
         <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -17,9 +18,16 @@
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
-        <button class="btn">Contact Me</button>
+        
+        <div id="menu-icon">
+            <i class='bx bx-menu'></i>
+        </div>
+        
+        <!-- Changed button to anchor tag to link to contact section -->
+        <a href="#contact" class="btn">Contact Me</a>
     </header>
 
+    <!-- Home Section -->
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hello, I'm</h3>
@@ -52,71 +60,148 @@
         </div>
 
         <div class="home-img">
+            <!-- Ensure you have an image named 'image.jpg' in your folder -->
             <img src="image.jpg" alt="Juliana">
         </div>
     </section>
 
+    <!-- About Section -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="image.jpg" alt="Juliana">
-
+            <!-- Ensure you have an image named 'image1.jpg' in your folder -->
+            <img src="image1.jpg" alt="Juliana">
         </div>
-        <div class="about-content"></div>
-        <h2>About <span>Me</span></h2>
-        <p> I am a passionate web developer with a love for photography. 
-            I enjoy creating beautiful and functional websites,
-            and I am always eager to learn new technologies and improve my skills. </p>
 
-        <a href="#" class="btn">Read More</a>
+        <div class="about-content">
+            <h2>About <span>Me</span></h2>
+            <p>
+               Hi there! 👋
 
+                I'm an 18-year-old student currently pursuing my education at Westbridge Institute of Technology, Inc.
+                I'm on a journey to become a Full-Stack Web Developer, passionate about building websites and applications that make a difference. I love learning new technologies and turning ideas into reality through code.
+                As an Aspiring Iskolar ng Bayan, I'm committed to using my skills to serve and contribute to our community. I believe that education is the key to empowerment, and I'm dedicated to making the most of every opportunity to grow and learn.
+            </p>
+            <a href="#" class="btn">Read More</a>
+        </div>
     </section>
 
+    <!-- Services Section -->
     <section class="services" id="services">
-
         <h2 class="heading">Services</h2>
 
-
-        <div class="service-info">
+        <div class="services-container">
             <div class="service-box">
                 <div class="service-info">
                     <i class="bx bx-code"></i>
                     <h4>Frontend Development</h4>
-                    <p> I specialize in creating responsive
-                    and visually appealing websites using HTML, CSS, and JavaScript. </p>
+                    <p>I specialize in creating responsive and visually appealing websites using HTML, CSS, and JavaScript.</p>
                 </div>
             </div>
-        </div>
 
-        <div class="service-info">
             <div class="service-box">
                 <div class="service-info">
-                    <i class="bx bx-shutter-alt"></i>
-                    <h4>Photography</h4>
-                    <p> I specialize in capturing beautiful moments and creating stunning visual content. </p>
+                    <i class="bx bx-code-curly"></i>
+                    <h4>Backend Development</h4>
+                    <p>I specialize in building robust and scalable backend systems using Node.js, Python, and other server-side technologies.</p>
                 </div>
             </div>
-        </div>
 
-            <div class="service-info">
             <div class="service-box">
                 <div class="service-info">
-                    <i class="bx bx-vector-triangle"></i>
-                    <h4>Photo Editing</h4>
-                    <p> I specialize in creating engaging and professional photo edits for various platforms. </p>
+                    <i class="bx bx-robot"></i>
+                    <h4>IoT</h4>
+                    <p>I specialize in developing and implementing Internet of Things (IoT) solutions for smart environments.</p>
                 </div>
             </div>
-        </div>
 
-            <div class="service-info">
             <div class="service-box">
                 <div class="service-info">
                     <i class="bx bxl-adobe"></i>
-                    <h4>Graphic Design</h4>
-                    <p> I specialize in creating visually appealing and professional designs for websites and marketing materials. </p>
+                    <h4>Photography & Videography</h4>
+                    <p>I specialize in capturing high-quality photos and videos for personal and professional projects.</p>
                 </div>
             </div>
         </div>
-
     </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="heading">Projects</h2>
+
+        <div class="projects-box">
+            <div class="project-card">
+                <!-- Ensure you have project images in your folder -->
+                <img src="project1.jpg" alt="RFID Project">
+                <h3>RFID Attendance System</h3>
+                <p>Improving school attendance tracking using RFID technology.</p>
+                <div class="btn">Review Project</div>
+            </div>
+
+            <div class="project-card">
+                <img src="project2.png" alt="Personal Website">
+                <h3>Personal Website</h3>
+                <p>Creating a responsive and visually appealing personal website to showcase my skills and projects.</p>
+                <div class="btn">Review Project</div>
+            </div>
+
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="btn">Review Project</div>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <form action="#">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Mobile Number" required>
+                </div>
+            </div>
+
+            <div class="input-group-2">
+                <textarea name="message" id="message" placeholder="Your Message Here..." cols="30" rows="10" required></textarea> 
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-github"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+            </div>
+
+            <p class="copyright">Copyright © 2024 Juliana Macasieb. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
