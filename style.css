@@ -540,25 +540,38 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 768px) {
+@media (max-width: 1285px) {
 
     /* ==================== GENERAL ==================== */
     section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         padding: 6rem 1.5rem 4rem;
         text-align: center;
+    }
+
+    /* ==================== HEADER & LOGO ==================== */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.8rem !important;
+        font-weight: 700;
     }
 
     /* ==================== NAVBAR ==================== */
     /* Menu Icon (Hamburger) */
     #menu-icon {
-        display: block !important;
-        position: fixed;
-        top: 1.5rem;
-        right: 1.5rem;
-        z-index: 1001;
-        font-size: 3rem;
+        display: block;
+        font-size: 2.5rem; /* Make it big enough to tap */
         cursor: pointer;
-        color: var(--text-color);
+        z-index: 1001;
     }
 
     /* Hide Contact Button from Navbar */
@@ -571,45 +584,41 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
 
     /* Navbar Overlay */
     .navbar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+       position: absolute;
+        top: 100%; /* Position directly below the header */
+        left: 0;
+        width: 100%; /* CHANGED: Full width to fit mobile screens */
+        height: 100vh; /* CHANGED: Take up full screen height */
+        background: rgba(0, 0, 0, 0.95); /* Dark background */
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
         align-items: center;
-        transition: 0.3s ease;
+        justify-content: flex-start;
+        padding-top: 3rem;
         z-index: 1000;
-        transform: translateX(100%);
+        transition: all 0.3s ease;
+        border-bottom-left-radius: 2rem;
+        border-bottom: var(--main-color);
+        border-left: var(--main-color);
+
     }
 
     /* Active Navbar */
     .navbar.active {
-        transform: translateX(0);
+        display: flex;
     }
 
     /* Navbar Links */
     .navbar a {
         display: block;
-        font-size: 2.5rem;
-        margin: 1.5rem 0;
+        font-size: 2rem;
+        margin: 3rem 0;
         color: var(--text-color);
-        text-decoration: none;
-    }
-
-    .navbar a:hover {
-        color: var(--main-color);
-    }
-
-    .navbar a::after {
-        display: none;
     }
 
     /* ==================== HOME SECTION ==================== */
     .home {
+        display: flex;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
@@ -627,33 +636,36 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
         width: 100%;
     }
 
-    .home-content span {
-        font-size: 3rem;
-        color: var(--main-color);
-        margin-bottom: 0.5rem;
     }
 
     .home-content h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
         line-height: 1.1;
         margin-bottom: 1rem;
         text-align: center;
     }
 
     .home-content p {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         line-height: 1.6;
         margin: 1rem auto 2rem;
         max-width: 90%;
         text-align: center;
     }
 
+    .home-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .home-img img {
-        width: 70vw;
-        max-width: 300px;
+        width: 65vw;
+        max-width: 280px;
         margin: 0 auto;
         display: block;
     }
+    
 
     /* Buttons */
     .btn-box {
@@ -668,16 +680,20 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
 
     .btn-box .btn,
     .home-content .btn {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 90%;
-        max-width: 300px;
+        max-width: 280px;
         margin: 0;
         text-align: center;
-        padding: 1.2rem 2rem;
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
     }
 
     /* ==================== ABOUT SECTION ==================== */
     .about {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -685,21 +701,35 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
         text-align: center;
     }
 
+    .about-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .about-img img {
-        width: 70vw;
-        max-width: 300px;
+        width: 65vw;
+        max-width: 280px;
         margin: 0 auto;
         display: block;
     }
 
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .about-content h2 {
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 
     .about-content p {
         text-align: center;
         max-width: 90%;
+        font-size: 1.5rem;
     }
 
     /* ==================== SERVICES SECTION ==================== */
@@ -712,13 +742,24 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
         width: 100%;
     }
 
+    .services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .services h2 {
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.8rem;
         margin-bottom: 3rem;
     }
 
     .services-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 90%;
         max-width: 400px;
         margin: 0 auto 2rem;
@@ -727,7 +768,21 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
     }
 
     /* ==================== PROJECTS SECTION ==================== */
+    .projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .projects h2 {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 3rem;
+    }
+
     .projects-box {
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -735,6 +790,10 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
     }
 
     .project-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 90%;
         max-width: 400px;
         margin: 0 auto;
@@ -744,16 +803,24 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
 
     /* ==================== CONTACT SECTION ==================== */
     .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
     }
 
     .contact h2 {
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.8rem;
         margin-bottom: 3rem;
     }
 
     .contact form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         max-width: 500px;
         margin: 0 auto;
@@ -762,7 +829,9 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
 
     .input-group,
     .input-box {
+        display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
         gap: 1rem;
     }
@@ -770,30 +839,40 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
     .input-box input,
     .contact form textarea {
         width: 100%;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+        padding: 1rem;
     }
 
     .contact .btn {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 90%;
-        max-width: 300px;
+        max-width: 280px;
         margin: 2rem auto 0;
         text-align: center;
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
     }
 
     /* ==================== FOOTER ==================== */
     .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         padding: 3rem 1.5rem;
     }
 
     .footer-text p {
         text-align: center;
+        font-size: 1.4rem;
     }
 
     .footer-Social {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 1.5rem;
     }
-}
