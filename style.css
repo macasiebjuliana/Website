@@ -538,341 +538,125 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
     font-size: 1.2rem;
     color: var(--text-color);
 }
+/* --- RESPONSIVE MEDIA QUERIES --- */
 
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 1285px) {
+/* For Tablets and smaller desktops */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%; /* Scales down all rem units */
+    }
+}
 
-    /* ==================== GENERAL ==================== */
+@media (max-width: 992px) {
+    header {
+        padding: 2rem 4%;
+    }
+
     section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 6rem 1.5rem 4rem;
-        text-align: center;
+        padding: 10rem 4% 2rem;
     }
 
-    /* ==================== HEADER & LOGO ==================== */
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 1.5rem;
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .logo {
-        font-size: 1.8rem !important;
-        font-weight: 700;
-    }
-
-    /* ==================== NAVBAR ==================== */
-    /* Menu Icon (Hamburger) */
-    #menu-icon {
-        display: block;
-        font-size: 2.5rem; /* Make it big enough to tap */
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    /* Hide Contact Button from Navbar */
-    .gradient-btn,
-    .navbar .gradient-btn,
-    .contact-btn,
-    .btn-cta {
-        display: none !important;
-    }
-
-    /* Navbar Overlay */
-    .navbar {
-       position: absolute;
-        top: 100%; /* Position directly below the header */
-        left: 0;
-        width: 100%; /* CHANGED: Full width to fit mobile screens */
-        height: 100vh; /* CHANGED: Take up full screen height */
-        background: rgba(0, 0, 0, 0.95); /* Dark background */
-        display: none; /* Hidden by default */
-        flex-direction: column; /* Stack links vertically */
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 3rem;
-        z-index: 1000;
-        transition: all 0.3s ease;
-        border-bottom-left-radius: 2rem;
-        border-bottom: var(--main-color);
-        border-left: var(--main-color);
-
-    }
-
-    /* Active Navbar */
-    .navbar.active {
-        display: flex;
-    }
-
-    /* Navbar Links */
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        color: var(--text-color);
-    }
-
-    /* ==================== HOME SECTION ==================== */
-    .home {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 8rem 1.5rem 4rem;
-        min-height: 100vh;
+    .projects-box {
         gap: 3rem;
     }
+}
 
-    .home-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+/* For Mobile Phones */
+@media (max-width: 768px) {
+    /* Navbar Adjustment - Simplified for CSS-only (consider a JS hamburger menu later) */
+    .navbar {
+        display: none; /* Usually hidden on mobile until clicked */
     }
 
+    /* Stack Home Section */
+    .home {
+        flex-direction: column-reverse;
+        gap: 4rem;
+        text-align: center;
     }
 
     .home-content h1 {
-        font-size: 3.5rem;
-        line-height: 1.1;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-
-    .home-content p {
-        font-size: 1.6rem;
-        line-height: 1.6;
-        margin: 1rem auto 2rem;
-        max-width: 90%;
-        text-align: center;
-    }
-
-    .home-img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-size: 5rem;
     }
 
     .home-img img {
-        width: 65vw;
-        max-width: 280px;
-        margin: 0 auto;
-        display: block;
+        width: 70vw;
+        margin-top: 4rem;
     }
-    
 
-    /* Buttons */
-    .btn-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .text-changer {
         justify-content: center;
-        gap: 1.5rem;
-        width: 100%;
-        margin: 1rem 0;
     }
 
-    .btn-box .btn,
-    .home-content .btn {
-        display: flex;
+    .description {
+        margin: 2rem auto;
+    }
+
+    .btn-group {
         justify-content: center;
-        align-items: center;
-        width: 90%;
-        max-width: 280px;
-        margin: 0;
-        text-align: center;
-        padding: 1rem 2rem;
-        font-size: 1.4rem;
     }
 
-    /* ==================== ABOUT SECTION ==================== */
+    /* Stack About Section */
     .about {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
+        gap: 4rem;
         text-align: center;
-    }
-
-    .about-img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .about-img img {
-        width: 65vw;
-        max-width: 280px;
-        margin: 0 auto;
-        display: block;
-    }
-
-    .about-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        width: 70vw;
     }
 
     .about-content h2 {
         text-align: center;
-        font-size: 2.8rem;
     }
 
-    .about-content p {
-        text-align: center;
-        max-width: 90%;
-        font-size: 1.5rem;
-    }
-
-    /* ==================== SERVICES SECTION ==================== */
+    /* Services & Projects */
     .services-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        width: 100%;
+        grid-template-columns: 1fr;
     }
 
-    .services {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .services h2 {
-        text-align: center;
-        font-size: 2.8rem;
-        margin-bottom: 3rem;
-    }
-
-    .services-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-        max-width: 400px;
-        margin: 0 auto 2rem;
-        padding: 2rem;
-        text-align: center;
-    }
-
-    /* ==================== PROJECTS SECTION ==================== */
-    .projects {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .projects h2 {
-        text-align: center;
-        font-size: 2.8rem;
-        margin-bottom: 3rem;
+    .service-box {
+        max-width: 100%;
     }
 
     .projects-box {
-        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 3rem;
     }
 
     .project-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
+        flex: 1 1 auto;
+        width: 100%;
         max-width: 400px;
-        margin: 0 auto;
-        padding: 2rem;
-        text-align: center;
     }
 
-    /* ==================== CONTACT SECTION ==================== */
-    .contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+    /* Contact Form */
+    .contact form .input-box {
+        flex: 1 1 100%;
     }
 
-    .contact h2 {
-        text-align: center;
-        font-size: 2.8rem;
-        margin-bottom: 3rem;
+    /* Headings */
+    .heading, .services h2, .contact h2 {
+        font-size: 4rem;
+    }
+}
+
+/* Smallest Mobile Devices */
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
     }
 
-    .contact form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-        text-align: center;
+    .home-content h1 {
+        font-size: 4rem;
     }
 
-    .input-group,
-    .input-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 1rem;
+    .home-img img {
+        width: 80vw;
     }
-
-    .input-box input,
-    .contact form textarea {
-        width: 100%;
-        font-size: 1.5rem;
-        padding: 1rem;
-    }
-
-    .contact .btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        max-width: 280px;
-        margin: 2rem auto 0;
-        text-align: center;
-        padding: 1rem 2rem;
-        font-size: 1.4rem;
-    }
-
-    /* ==================== FOOTER ==================== */
-    .footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 3rem 1.5rem;
-    }
-
-    .footer-text p {
-        text-align: center;
-        font-size: 1.4rem;
-    }
-
-    .footer-Social {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
-    }
+}
