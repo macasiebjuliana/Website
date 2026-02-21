@@ -563,6 +563,8 @@ section { min-height: 100vh; padding: 15rem 9% 2rem; }
     .projects-box {
         gap: 3rem;
     }
+    #menu-icon {
+        display: block; /* Show icon on mobile */
 }
 
 /* For Mobile Phones */
